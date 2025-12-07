@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 public partial class Gem : Area2D
 {
-	const int SPEED = 200;
+	[Export] int SPEED = 200;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
