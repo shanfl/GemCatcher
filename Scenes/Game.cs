@@ -3,26 +3,29 @@ using System;
 
 public partial class Game : Node2D
 {
+
+	[Export] private Gem _gem;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-    {
-        GD.Print("Game Scene Loaded");
+	{
+		GD.Print("Game Scene Loaded");
 
-		Gem gem = GetNode<Gem>("Gem");
-		gem.GemScored += OnGemScored;
-    }
+		//Gem gem = GetNode<Gem>("Gem");
+		//gem.OnScored += OnGemScored;
+		_gem.OnScored += OnGemScored;
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
-    {
-        //GD.Print("Frame updated with delta time: " + delta);
-    }
+	{
+		//GD.Print("Frame updated with delta time: " + delta);
+	}
 
-    public override void _EnterTree()
-    {
-        GD.Print("Game Scene Entered Tree");
+	public override void _EnterTree()
+	{
+		GD.Print("Game Scene Entered Tree");
 		base._EnterTree();
-    }
+	}
 
 	public override void _ExitTree()
 	{

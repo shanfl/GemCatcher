@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8eqjpfm8dtrn"]
+[gd_scene format=3 uid="uid://b8eqjpfm8dtrn"]
 
 [ext_resource type="Texture2D" uid="uid://b5w75r40sc3p3" path="res://assets/element_red_diamond.png" id="1_klo45"]
 [ext_resource type="Script" uid="uid://xct5pkbn8imi" path="res://Scenes/Gem.cs" id="1_ope6i"]
@@ -6,11 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ope6i"]
 radius = 25.0
 
-[node name="Gem" type="Area2D"]
+[node name="Gem" type="Area2D" unique_id=998892727]
 script = ExtResource("1_ope6i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1315278562]
 texture = ExtResource("1_klo45")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2092405764]
 shape = SubResource("CircleShape2D_ope6i")
