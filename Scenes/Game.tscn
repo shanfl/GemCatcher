@@ -9,6 +9,7 @@
 script = ExtResource("1_iukft")
 _gem = NodePath("Gem")
 _gemPath = NodePath("Gem")
+_gemScene = ExtResource("4_kldst")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334645598]
 position = Vector2(909, 504)
@@ -20,3 +21,7 @@ Margin = 40
 
 [node name="Gem" parent="." unique_id=2095609751 instance=ExtResource("4_kldst")]
 position = Vector2(575, 114)
+
+[node name="Timer" type="Timer" parent="." unique_id=1993608674]
+wait_time = 2.0
+autostart = true

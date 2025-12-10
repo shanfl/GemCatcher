@@ -7,6 +7,7 @@ public partial class Gem : Area2D
 	[Export] int SPEED = 200;
 
 	[Signal] public delegate void OnScoredEventHandler();
+	[Signal] public delegate void OnMissedEventHandler();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -27,6 +28,8 @@ public partial class Gem : Area2D
 		if(Position.Y > GetViewportRect().End.Y)
 		{
 			//GD.Print("Gem hit the bottom");
+			EmitSignal(SignalName.OnMissed);
+			QueueFree();
 		}
 	}
 
