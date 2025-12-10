@@ -8,6 +8,7 @@
 [node name="Game" type="Node2D" unique_id=1567312487 node_paths=PackedStringArray("_gem")]
 script = ExtResource("1_iukft")
 _gem = NodePath("Gem")
+_gemPath = NodePath("Gem")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334645598]
 position = Vector2(909, 504)
