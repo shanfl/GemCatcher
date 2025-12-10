@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c50nt3j65xncm" path="res://Scenes/Game.cs" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://d216souoesuys" path="res://assets/GameBg.png" id="2_gl6un"]
+[ext_resource type="AudioStream" uid="uid://dtfk07ryobxgf" path="res://assets/explode.wav" id="3_fgofq"]
 [ext_resource type="PackedScene" uid="uid://b86vf0nnuag13" path="res://Scenes/Paddle.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://b8eqjpfm8dtrn" path="res://Scenes/Gem.tscn" id="4_kldst"]
+[ext_resource type="AudioStream" uid="uid://df347gxeph5km" path="res://assets/bgm_action_5.mp3" id="5_b2bpf"]
+[ext_resource type="AudioStream" uid="uid://boe377tli867s" path="res://assets/spell1_0.wav" id="6_7lihs"]
 
-[node name="Game" type="Node2D" unique_id=1567312487 node_paths=PackedStringArray("_gem")]
+[node name="Game" type="Node2D" unique_id=1567312487 node_paths=PackedStringArray("_gem", "_effectPlayer")]
 script = ExtResource("1_iukft")
 _gem = NodePath("Gem")
 _gemPath = NodePath("Gem")
 _gemScene = ExtResource("4_kldst")
+_effectPlayer = NodePath("Effect")
+_explodeStream = ExtResource("3_fgofq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334645598]
 position = Vector2(909, 504)
@@ -25,3 +30,23 @@ position = Vector2(575, 114)
 [node name="Timer" type="Timer" parent="." unique_id=1993608674]
 wait_time = 2.0
 autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=419388026]
+offset_left = 27.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(1, 0.13333334, 0.11372549, 1)
+theme_override_colors/font_shadow_color = Color(0.21176471, 0.26666668, 0.27450982, 0.49803922)
+theme_override_colors/font_outline_color = Color(0.9408547, 0.8597989, 0.3627171, 1)
+theme_override_font_sizes/font_size = 30
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1760732614]
+stream = ExtResource("5_b2bpf")
+autoplay = true
+
+[node name="Effect" type="AudioStreamPlayer2D" parent="." unique_id=1806200056]
+stream = ExtResource("6_7lihs")

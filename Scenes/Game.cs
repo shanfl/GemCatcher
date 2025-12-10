@@ -4,10 +4,18 @@ using System;
 public partial class Game : Node2D
 {
 
+
+	private AudioStream _explodeStream = GD.Load<AudioStream>("res://assets/explode.wav");
 	[Export] private Gem _gem;
 	[Export] private NodePath _gemPath;
 
 	[Export] private PackedScene _gemScene;
+
+	[Export] private AudioStreamPlayer2D _effectPlayer;
+
+	//[Export] private AudioStream _explodeStream;
+
+	private int _score = 0;
 
 	//Gem gem = _gemScene.Instantiate<Gem>();
 	//
@@ -75,11 +83,27 @@ public partial class Game : Node2D
 	{
 		GD.Print("Gem scored signal received in Game");
 		//SpawnGem();
+		_score +=1;
+
+		GetNode<Label>("Label").Text = "" + _score;
+
+		_effectPlayer.Play();
 	}	
+	
 
 	public void OnGemMissed()
 	{
 		GD.Print("Gem missed signal received in Game");
 		//SpawnGem();
+		foreach(Node node in GetChildren())
+		{
+			node.SetProcess(false);
+		}
+
+		GetNode<Timer>("Timer").Stop();
+		GetNode<AudioStreamPlayer>("Music").Stop();
+
+		_effectPlayer.Stream = _explodeStream;
+		_effectPlayer.Play();
 	}
 }
