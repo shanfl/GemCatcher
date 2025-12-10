@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c50nt3j65xncm" path="res://Scenes/Game.cs" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://d216souoesuys" path="res://assets/GameBg.png" id="2_gl6un"]
-[ext_resource type="AudioStream" uid="uid://dtfk07ryobxgf" path="res://assets/explode.wav" id="3_fgofq"]
 [ext_resource type="PackedScene" uid="uid://b86vf0nnuag13" path="res://Scenes/Paddle.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://b8eqjpfm8dtrn" path="res://Scenes/Gem.tscn" id="4_kldst"]
 [ext_resource type="AudioStream" uid="uid://df347gxeph5km" path="res://assets/bgm_action_5.mp3" id="5_b2bpf"]
@@ -14,7 +13,6 @@ _gem = NodePath("Gem")
 _gemPath = NodePath("Gem")
 _gemScene = ExtResource("4_kldst")
 _effectPlayer = NodePath("Effect")
-_explodeStream = ExtResource("3_fgofq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334645598]
 position = Vector2(909, 504)
