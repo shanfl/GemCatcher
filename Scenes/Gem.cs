@@ -29,7 +29,8 @@ public partial class Gem : Area2D
 		{
 			//GD.Print("Gem hit the bottom");
 			EmitSignal(SignalName.OnMissed);
-			QueueFree();
+			SetProcess(false);
+			//QueueFree();
 		}
 	}
 
