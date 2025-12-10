@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://xct5pkbn8imi" path="res://Scenes/Gem.cs" id="1_ope6i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ope6i"]
-radius = 24.33105
+radius = 25.0
 
 [node name="Gem" type="Area2D"]
 script = ExtResource("1_ope6i")

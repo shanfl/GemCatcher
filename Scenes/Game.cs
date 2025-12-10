@@ -7,6 +7,9 @@ public partial class Game : Node2D
 	public override void _Ready()
     {
         GD.Print("Game Scene Loaded");
+
+		Gem gem = GetNode<Gem>("Gem");
+		gem.GemScored += OnGemScored;
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,4 +34,10 @@ public partial class Game : Node2D
 	{
 		//GD.Print("Physics Frame updated with delta time: " + delta);
 	}
+
+
+	public void OnGemScored()
+	{
+		GD.Print("Gem scored signal received in Game");
+	}	
 }

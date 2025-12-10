@@ -5,10 +5,14 @@ using System.Runtime.CompilerServices;
 public partial class Gem : Area2D
 {
 	[Export] int SPEED = 200;
+
+	[Signal] public delegate void OnScoredEventHandler();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{
-	}
+    {
+        AreaEntered += OnAreaEnter;
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -27,8 +31,10 @@ public partial class Gem : Area2D
     }
 
 
-	private void OnAreaEntered(Area2D area)
+	private void OnAreaEnter(Area2D area)
 	{
-		
+		GD.Print("Gem collected!");
+		EmitSignal(SignalName.OnScored);
+		QueueFree();
 	}
 }
